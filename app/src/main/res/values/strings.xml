@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ESP32_app</string>
+    <string name="connect">connect</string>
+    <string name="fetch_clock">fetch clock</string>
+    <string name="time_zone">time zone</string>
+    <string name="sync_clock">sync clock</string>
 </resources>

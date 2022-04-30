@@ -5,4 +5,5 @@
     <string name="time_zone">time zone</string>
     <string name="sync_clock">sync clock</string>
     <string name="current_timezone">Current Timezone</string>
+    <string name="clock">Clock</string>
 </resources>

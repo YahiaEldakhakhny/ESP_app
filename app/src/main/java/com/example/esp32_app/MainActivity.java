@@ -1,9 +1,11 @@
 package com.example.esp32_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,10 +20,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String currTimezone;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // no night mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         //find view by id
         btnFetchClock = findViewById(R.id.btn_fetch_clk);
@@ -34,6 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnFetchClock.setOnClickListener(this);
         btnSyncClk.setOnClickListener(this);
         btnTimezone.setOnClickListener(this);
+
+        //shared preference
+        SharedPreferences spTimezone = getSharedPreferences("spTimezone", 0);
+
+        currTimezone = spTimezone.getString("currentTimezone", "Cairo");
 
         //print the current timezone on screen
         tvOut.setText(currTimezone);

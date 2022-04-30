@@ -4,4 +4,5 @@
     <string name="fetch_clock">fetch clock</string>
     <string name="time_zone">time zone</string>
     <string name="sync_clock">sync clock</string>
+    <string name="current_timezone">Current Timezone</string>
 </resources>
